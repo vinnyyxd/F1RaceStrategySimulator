@@ -1,31 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>F1 Race Strategy Simulator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-<h1>F1 Race Strategy Simulator</h1>
+{% extends 'base.html' %}
+{% block content %}
 
+
+<div class="row justify-content-center">
+<div class="col-md-7">
+<div class="card shadow-sm">
+<div class="card-header fw-bold">
+Strategy Configuration
+</div>
+<div class="card-body">
 <form action="/simulate" method="post">
-    <label>Circuit:</label>
-    <select name="circuit">
-        <option>Monza</option>
-        <option>Silverstone</option>
-        <option>Spa</option>
-    </select><br><br>
 
-    <label>Tyre Compound:</label>
-    <select name="tyre">
-        <option>Soft</option>
-        <option>Medium</option>
-        <option>Hard</option>
-    </select><br><br>
 
-    <label>Pit Stops:</label>
-    <input type="number" name="pit_stops" min="0" max="3"><br><br>
+<div class="mb-3">
+<label class="form-label">Circuit</label>
+<select class="form-select" name="circuit">
+<option>Monza</option>
+<option>Silverstone</option>
+<option>Spa</option>
+</select>
+</div>
 
-    <button type="submit">Simulate Strategy</button>
+
+<div class="mb-3">
+<label class="form-label">Tyre Compound</label>
+<select class="form-select" name="tyre">
+<option>Soft</option>
+<option>Medium</option>
+<option>Hard</option>
+</select>
+</div>
+
+
+<div class="mb-4">
+<label class="form-label">Number of Pit Stops</label>
+<input type="number" class="form-control" name="pit_stops" min="0" max="3" required>
+</div>
+
+
+<button class="btn btn-primary w-100">
+Simulate Strategy
+</button>
 </form>
-</body>
-</html>
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,18 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Strategy Result</title>
-</head>
-<body>
-<h2>Strategy Result</h2>
+{% extends 'base.html' %}
+{% block content %}
 
-<ul>
-    <li>Circuit: {{ result.circuit }}</li>
-    <li>Tyre: {{ result.tyre }}</li>
-    <li>Pit Stops: {{ result.pit_stops }}</li>
-    <li>Total Race Time: {{ result.total_time }} seconds</li>
-</ul>
 
-<a href="/">Try another strategy</a>
-</body>
-</html>
+<div class="row justify-content-center">
+<div class="col-md-8">
+<div class="card shadow">
+<div class="card-header bg-success text-white fw-bold">
+Simulation Result
+</div>
+<div class="card-body">
+
+
+<table class="table">
+<tr>
+<th>Circuit</th>
+<td>{{ result.circuit }}</td>
+</tr>
+<tr>
+<th>Tyre Compound</th>
+<td>{{ result.tyre }}</td>
+</tr>
+<tr>
+<th>Pit Stops</th>
+<td>{{ result.pit_stops }}</td>
+</tr>
+<tr class="table-success fw-bold">
+<th>Total Race Time (sec)</th>
+<td>{{ result.total_time }}</td>
+</tr>
+</table>
+
+
+<div class="text-center mt-4">
+<a href="/" class="btn btn-outline-secondary">
+Run Another Simulation
+</a>
+</div>
+
+
+{% endblock %}
